@@ -21,6 +21,8 @@ public struct Signature: Sendable, Hashable, Codable {
     /// The hash the code was made with.
     public let algorithm: HashAlgorithm
 
+    /// A signature from raw bytes; see ``Signature/init(hex:algorithm:)`` and
+    /// ``Signature/init(base64:algorithm:)`` for the forms headers carry.
     public init(data: Data, algorithm: HashAlgorithm) {
         self.data = data
         self.algorithm = algorithm
